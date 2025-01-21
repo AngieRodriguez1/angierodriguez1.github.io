@@ -1,4 +1,4 @@
 ```mermaid
 flowchart TD
-    Generates random numbers within a certain range -->Checks user input -->Gives Correct Feedback
+    Generates numbers within a certain range -->Checks user input -->Gives Correct Feedback
 ```

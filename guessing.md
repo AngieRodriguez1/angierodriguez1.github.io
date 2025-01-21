@@ -1,4 +1,4 @@
 ```mermaid
 flowchart TD
-    Generates numbers within a certain range -->Checks user input -->Gives Correct Feedback
+    A([Generates random numbers within a certain range]) --> B([Checks user input])
 ```

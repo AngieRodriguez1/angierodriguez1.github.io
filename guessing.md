@@ -1,4 +1,4 @@
 ```mermaid
 flowchart TD
-Start([Start]) --> End([End])
+Start([Generates random numbers within a certain range]) --> ([Checks user input]) --> End([Gives Correct Feedback])
 ```

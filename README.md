@@ -1,7 +1,7 @@
-# angierodriguez1.github.io
-Angie Portillo Rodriguez, apportillorodriguez@my.waketech.edu
-This is my Wake Tech school account
-This repository will hold school assignments
+# angierodriguez1.github.io  
+Angie Portillo Rodriguez, apportillorodriguez@my.waketech.edu  
+This is my Wake Tech school account  
+This repository will hold school assignments  
 # About Me
 ## My Interests
 Drawing and Digital art  

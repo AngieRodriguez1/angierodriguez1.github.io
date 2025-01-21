@@ -1,4 +1,4 @@
 ```mermaid
 flowchart TD
-    Start{[Start]}-->End{[End]}
-    ```
+Start([Start]) --> End([End])
+```

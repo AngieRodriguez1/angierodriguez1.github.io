@@ -36,21 +36,27 @@ router.get('/api/grades',function(req, res){
         GROUP BY Students.Student_id \
         ORDER BY total_grade DESC`,
         [],
-        function( err, result){
-            if(err)
-            {
+        function(err, result) {
+            if (err) {
                 console.error(err);
+                return;  // Return early if there's an error
             }
-            
-            result.rows.forEach( 
-                    function(row){
-                        console.log(`Student Name: ${row.First_name} ${row.Last_name}`);
-                        console.log(`Grade: ${row.total_grade}`);
-                    }
-            ); // End of forEach
-            
-            res.status(200).json(result.rows);
+        
+            // Check if result and result.rows exist
+            if (result && result.rows) {
+                result.rows.forEach(function(row) {
+                    console.log(`Student Name: ${row.First_name} ${row.Last_name}`);
+                    console.log(`Grade: ${row.total_grade}`);
+                });
+        
+                res.status(200).json(result.rows);
+            } else {
+                // If no rows are returned, handle the case (optional)
+                console.log("No data found or result.rows is undefined.");
+                res.status(404).send("No data found");
+            }
         }
+        
     );
 });
 

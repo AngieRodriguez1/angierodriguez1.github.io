@@ -34,7 +34,7 @@ router.get('/api/grades',function(req, res){
         FROM Students  \
         LEFT JOIN Assignments ON Assignments.Student_id = Students.Student_id \
         GROUP BY Students.Student_id \
-        ORDER BY total_grade DESC,`
+        ORDER BY total_grade DESC`,
         [],
         function( err, result){
             if(err)

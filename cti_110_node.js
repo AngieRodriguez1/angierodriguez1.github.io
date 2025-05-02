@@ -9,7 +9,7 @@ const path = require('path');
 // This part sets up the database
 const {Pool} = require('pg');
 // You may need to modify the password or database name in the following line:
-const connectionString = `postgres://postgres:CTI110@localhost/Gradebook`;
+const connectionString = `postgres://postgres:CTI110@localhost/postgres`;
 // The default password is CTI_110_WakeTech
 // The default database name is Gradebook
 const pool = new Pool({connectionString:connectionString})
@@ -30,11 +30,11 @@ app.use("/", router);
 
 router.get('/api/grades',function(req, res){
     pool.query(
-        `SELECT Students.Student_id, First_name, Last_name, AVG(assignments.grade) as total_grade \
-            FROM Students  \
-            LEFT JOIN Assignments ON Assignments.Student_id = Students.Student_id \
-            GROUP BY Students.Student_id \
-            ORDER BY total_grade DESC`,
+        `SELECT Students.Student_id, First_name, Last_name, AVG(Assignments.grade) as total_grade \
+        FROM Students  \
+        LEFT JOIN Assignments ON Assignments.Student_id = Students.Student_id \
+        GROUP BY Students.Student_id \
+        ORDER BY total_grade DESC,`
         [],
         function( err, result){
             if(err)
